@@ -44,10 +44,6 @@ public class JsonBackend {
         addJsonRequestToQueue(Request.Method.PUT, action, request, responseConsumer, afterError);
     }
 
-    public void deleteRequestForJson(String action, Consumer<JSONObject> responseConsumer, Runnable afterError) {
-        addJsonRequestToQueue(Request.Method.DELETE, action, null, responseConsumer, afterError);
-    }
-
     public void getRequestForJsonArray(String action, final Consumer<JSONArray> responseConsumer) {
         requestQueue.add(new JsonArrayRequest(
                 Request.Method.GET, serverUrl + action, null,

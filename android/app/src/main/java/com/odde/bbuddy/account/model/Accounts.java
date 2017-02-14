@@ -83,17 +83,4 @@ public class Accounts {
         });
     }
 
-    public void deleteAccount(Account account, final Runnable afterSuccess) {
-        jsonBackend.deleteRequestForJson("/accounts/" + account.getId(), new Consumer<JSONObject>() {
-            @Override
-            public void accept(JSONObject jsonObject) {
-                afterSuccess.run();
-            }
-        }, new Runnable() {
-            @Override
-            public void run() {
-
-            }
-        });
-    }
 }
