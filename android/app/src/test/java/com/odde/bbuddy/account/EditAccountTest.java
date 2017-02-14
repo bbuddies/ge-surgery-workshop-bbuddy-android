@@ -2,6 +2,8 @@ package com.odde.bbuddy.account;
 
 import android.support.annotation.NonNull;
 
+import com.odde.bbuddy.account.model.Accounts;
+import com.odde.bbuddy.account.viewmodel.Account;
 import com.odde.bbuddy.common.Consumer;
 import com.odde.bbuddy.common.JsonBackend;
 
@@ -59,8 +61,10 @@ public class EditAccountTest {
 
     @NonNull
     private Account account(int id, String name, int balanceBroughtForward) {
-        Account account = new Account(name, balanceBroughtForward);
+        Account account = new Account();
         account.setId(id);
+        account.setName(name);
+        account.setBalanceBroughtForward(balanceBroughtForward);
         return account;
     }
 
