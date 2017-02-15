@@ -22,3 +22,12 @@ end
 Then(/^you will see all accounts as below$/) do |accounts|
   accounts.each { |account| AccountsPage.open.assert_account_exists(account) }
 end
+
+When(/^delete account as (name \w+ and balance \d+)$/) do |account|
+  step 'show all accounts'
+  AccountsPage.open.go_to_edit_account(@current_account).delete_account(account)
+end
+
+Then(/^there is not exists the following accounts$/) do |accounts|
+  accounts.each { |account| AccountsPage.open.assert_account_does_not_exist(account) }
+end

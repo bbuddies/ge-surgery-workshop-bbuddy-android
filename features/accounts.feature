@@ -26,3 +26,14 @@ Feature: Accounts
     Then you will see all accounts as below
       | name | balance |
       | HSBC | 2000    |
+
+
+  Scenario: delete account
+    Given exists the following accounts
+      | name | balance |
+      | CMB  | 1000    |
+    When delete account as name CMB and balance 1000
+    Then there is not exists the following accounts
+      | name | balance |
+      | CMB  | 1000    |
+

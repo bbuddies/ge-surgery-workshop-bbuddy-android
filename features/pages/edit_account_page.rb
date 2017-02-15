@@ -10,4 +10,8 @@ class EditAccountPage < PageBase
     touch('Update')
   end
 
+  def delete_account(account)
+    touch('Delete')
+  end
+
 end
