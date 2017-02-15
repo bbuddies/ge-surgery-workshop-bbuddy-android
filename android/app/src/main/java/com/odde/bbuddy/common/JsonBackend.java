@@ -102,4 +102,7 @@ public class JsonBackend {
             }
         };
     }
+
+    public void deleteRequestForJson(String eq, JSONObject any, Consumer any1, Runnable any2) {
+    }
 }
