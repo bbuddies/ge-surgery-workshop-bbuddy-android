@@ -103,6 +103,7 @@ public class JsonBackend {
         };
     }
 
-    public void deleteRequestForJson(String eq, JSONObject any, Consumer any1, Runnable any2) {
+    public void deleteRequestForJson(String action, JSONObject request, Consumer responseConsumer, Runnable afterError) {
+        addJsonRequestToQueue(Request.Method.DELETE, action, request, responseConsumer, afterError);
     }
 }
